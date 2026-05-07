@@ -1,0 +1,52 @@
+site_name: aiwiki
+site_description: ML과 DL로 나눠 정리한 AI 지식 문서
+site_url: ""
+
+theme:
+  name: readthedocs
+  language: ko
+  highlightjs: true
+
+nav:
+  - Home: index.md
+  - ML:
+      - Overview: ml/index.md
+      - L1 / L2 정규화: ml/regularization.md
+      - PCA: ml/pca.md
+      - 학습 유형: ml/learning-types.md
+      - 앙상블: ml/ensemble.md
+      - 평가 지표: ml/metrics.md
+  - DL:
+      - Overview: dl/index.md
+      - Train:
+          - Overview: dl/train/index.md
+          - Loss Function: dl/train/loss.md
+          - Gradient & Backpropagation: dl/train/gradient.md
+          - Learning Rate: dl/train/learning-rate.md
+          - Optimizer: dl/train/optimizer.md
+          - Activation: dl/train/activation.md
+          - Training Tools: dl/train/training-tools.md
+          - 손계산 루틴: dl/train/by-hand.md
+      - Vision:
+          - Overview: dl/vision/index.md
+          - CNN: dl/vision/cnn.md
+          - Vision Tasks: dl/vision/tasks.md
+          - ViT: dl/vision/vit.md
+          - Swin Transformer / DETR: dl/vision/swin-detr.md
+      - NLP:
+          - Overview: dl/nlp/index.md
+          - RNN / LSTM / GRU: dl/nlp/rnn.md
+          - Transformer & Attention: dl/nlp/transformer.md
+          - GPT / BERT: dl/nlp/gpt-bert.md
+          - Prompting / RLHF / CoT: dl/nlp/prompting.md
+      - Optimization:
+          - Overview: dl/optimization/index.md
+          - Quantization: dl/optimization/quantization.md
+          - Pruning: dl/optimization/pruning.md
+          - LoRA / QLoRA: dl/optimization/lora.md
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - fenced_code
