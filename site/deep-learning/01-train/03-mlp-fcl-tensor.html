@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>03. MLP / FCL / Tensor / Channel - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="03-mlp-fcl-tensor.html" class="active">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="mlp-fcl-tensor-channel">MLP / FCL / Tensor / Channel<a class="headerlink" href="#mlp-fcl-tensor-channel" title="Permanent link">&para;</a></h1>
+<p>이 문서는 딥러닝 모델을 읽을 때 자주 나오는 기본 구조와 shape 표현을 정리합니다.</p>
+<h2 id="tensor">Tensor<a class="headerlink" href="#tensor" title="Permanent link">&para;</a></h2>
+<p>Tensor는 딥러닝에서 데이터를 담는 다차원 배열입니다.</p>
+<pre><code class="language-text">scalar: 0차원
+vector: 1차원
+matrix: 2차원
+tensor: n차원
+</code></pre>
+<p>예시:</p>
+<pre><code class="language-python">import torch
+
+x = torch.randn(32, 3, 224, 224)
+print(x.shape)
+</code></pre>
+<p>이미지 모델에서 위 shape는 보통 다음을 의미합니다.</p>
+<pre><code class="language-text">[batch, channel, height, width]
+</code></pre>
+<h2 id="channel">Channel<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h2>
+<p>Channel은 하나의 위치가 가진 feature 종류입니다.</p>
+<ul>
+<li>RGB 이미지: channel = 3</li>
+<li>흑백 이미지: channel = 1</li>
+<li>CNN 중간 feature map: channel = feature 종류 수</li>
+</ul>
+<p>CNN에서 channel이 커진다는 것은 더 다양한 패턴을 표현한다는 뜻입니다.</p>
+<h2 id="fully-connected-layer">Fully Connected Layer<a class="headerlink" href="#fully-connected-layer" title="Permanent link">&para;</a></h2>
+<p>Fully Connected Layer는 입력의 모든 feature가 출력의 모든 neuron과 연결되는 layer입니다. PyTorch에서는 보통 <code>nn.Linear</code>로 구현합니다.</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+layer = nn.Linear(in_features=4, out_features=2)
+x = torch.randn(3, 4)
+y = layer(x)
+
+print(y.shape)  # [3, 2]
+</code></pre>
+<h2 id="mlp">MLP<a class="headerlink" href="#mlp" title="Permanent link">&para;</a></h2>
+<p>MLP는 Fully Connected Layer와 activation을 여러 층 쌓은 기본 신경망입니다.</p>
+<pre><code class="language-python">class MLP(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, output_dim),
+        )
+
+    def forward(self, x):
+        return self.net(x)
+</code></pre>
+<h2 id="_1">어디에 쓰나<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>tabular data 분류/회귀</li>
+<li>CNN 마지막 classification head</li>
+<li>Transformer의 FFN 또는 MLP block</li>
+<li>embedding vector 후처리</li>
+</ul>
+<h2 id="shape">Shape 관점<a class="headerlink" href="#shape" title="Permanent link">&para;</a></h2>
+<p>MLP는 마지막 차원을 feature 차원으로 보고 변환하는 경우가 많습니다.</p>
+<pre><code class="language-python">x = torch.randn(2, 5, 16)
+linear = nn.Linear(16, 32)
+y = linear(x)
+
+print(y.shape)  # [2, 5, 32]
+</code></pre>
+<p>즉, batch나 sequence 차원은 유지되고 feature 차원만 바뀝니다.</p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

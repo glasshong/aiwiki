@@ -1,50 +1,66 @@
-﻿site_name: aiwiki
+site_name: aiwiki
 site_description: ML과 DL로 나눠 정리한 AI 지식 문서
 site_url: ""
+use_directory_urls: false
 
 theme:
   name: gitbook
 
 nav:
   - Home: index.md
+  - Interview Flow:
+      - Overview: interview/index.md
+      - Deep Learning Flow: interview/dl-flow.md
+      - Vision Flow: interview/vision-flow.md
+      - NLP Flow: interview/nlp-flow.md
+      - ML Flow: interview/ml-flow.md
+  - Common Training:
+      - Overview: common/index.md
+      - 01. Loss Function: common/01-loss.md
+      - 02. Gradient & Backpropagation: common/02-gradient.md
+      - 03. Learning Rate: common/03-learning-rate.md
+      - 04. Optimizer: common/04-optimizer.md
+      - 05. Hyperparameter Tuning: common/05-hyperparameter-tuning.md
+      - 06. Forward / Backward: common/06-forward-backward.md
   - ML:
-      - Overview: ml/index.md
-      - 01. 학습 유형: ml/01-learning-types.md
-      - 02. L1 / L2 정규화: ml/02-regularization.md
-      - 03. PCA: ml/03-pca.md
-      - 04. 앙상블: ml/04-ensemble.md
-      - 05. 평가 지표: ml/05-metrics.md
+      - Overview: machine-learning/index.md
+      - 01. 학습 유형: machine-learning/01-learning-types.md
+      - 02. L1 / L2 정규화: machine-learning/02-regularization.md
+      - 03. PCA: machine-learning/03-pca.md
+      - 04. 앙상블: machine-learning/04-ensemble.md
+      - 05. 평가 지표: machine-learning/05-metrics.md
   - DL:
-      - Overview: dl/index.md
+      - Overview: deep-learning/index.md
       - Train:
-          - Overview: dl/01-train/index.md
-          - 01. Loss Function: dl/01-train/01-loss.md
-          - 02. Gradient & Backpropagation: dl/01-train/02-gradient.md
-          - 03. Learning Rate: dl/01-train/03-learning-rate.md
-          - 04. Optimizer: dl/01-train/04-optimizer.md
-          - 05. Activation: dl/01-train/05-activation.md
-          - 06. Training Tools: dl/01-train/06-training-tools.md
-          - 07. 손계산 루틴: dl/01-train/07-by-hand.md
+          - Overview: deep-learning/01-train/index.md
+          - 01. Activation: deep-learning/01-train/01-activation.md
+          - 02. Training Tools: deep-learning/01-train/02-training-tools.md
+          - 03. MLP / FCL / Tensor / Channel: deep-learning/01-train/03-mlp-fcl-tensor.md
+          - 04. 손계산 루틴: deep-learning/01-train/04-by-hand.md
       - Vision:
-          - Overview: dl/02-vision/index.md
-          - 01. CNN: dl/02-vision/01-cnn.md
-          - 02. Vision Tasks: dl/02-vision/02-tasks.md
-          - 03. ViT: dl/02-vision/03-vit.md
-          - 04. Swin Transformer / DETR: dl/02-vision/04-swin-detr.md
+          - Overview: deep-learning/02-vision/index.md
+          - 01. CNN: deep-learning/02-vision/01-cnn.md
+          - 02. Image Classification: deep-learning/02-vision/02-classification.md
+          - 03. Object Detection: deep-learning/02-vision/03-detection.md
+          - 04. Segmentation: deep-learning/02-vision/04-segmentation.md
+          - 05. ViT: deep-learning/02-vision/05-vit.md
+          - 06. Swin Transformer / DETR: deep-learning/02-vision/06-swin-detr.md
       - NLP:
-          - Overview: dl/03-nlp/index.md
-          - 01. RNN / LSTM / GRU: dl/03-nlp/01-rnn.md
-          - 02. Transformer Overview: dl/03-nlp/02-transformer-overview.md
-          - 03. Attention 기본: dl/03-nlp/03-attention-basic.md
-          - 04. GPT / BERT: dl/03-nlp/04-gpt-bert.md
-          - 05. 효율적 Attention: dl/03-nlp/05-efficient-attention.md
-          - 06. Prompting / RLHF / CoT: dl/03-nlp/06-prompting-rlhf-cot.md
-          - 07. Llama 코드 구조: dl/03-nlp/07-llama-code-structure.md
+          - Overview: deep-learning/03-nlp/index.md
+          - 01. RNN / LSTM / GRU: deep-learning/03-nlp/01-rnn.md
+          - 02. Transformer Overview: deep-learning/03-nlp/02-transformer-overview.md
+          - 03. Attention 기본: deep-learning/03-nlp/03-attention-basic.md
+          - 04. GPT / BERT: deep-learning/03-nlp/04-gpt-bert.md
+          - 05. 효율적 Attention: deep-learning/03-nlp/05-efficient-attention.md
+          - 06. Prompting / RLHF / CoT: deep-learning/03-nlp/06-prompting-rlhf-cot.md
+          - 07. Llama 코드 구조: deep-learning/03-nlp/07-llama-code-structure.md
+          - 08. Autoencoder / MAE: deep-learning/03-nlp/08-autoencoder-mae.md
+          - 09. MoE: deep-learning/03-nlp/09-moe.md
       - Optimization:
-          - Overview: dl/04-optimization/index.md
-          - 01. Quantization: dl/04-optimization/01-quantization.md
-          - 02. Pruning: dl/04-optimization/02-pruning.md
-          - 03. LoRA / QLoRA: dl/04-optimization/03-lora.md
+          - Overview: deep-learning/04-optimization/index.md
+          - 01. Quantization: deep-learning/04-optimization/01-quantization.md
+          - 02. Pruning: deep-learning/04-optimization/02-pruning.md
+          - 03. LoRA / QLoRA: deep-learning/04-optimization/03-lora.md
 
 markdown_extensions:
   - tables
