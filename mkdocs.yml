@@ -1,49 +1,50 @@
-site_name: aiwiki
+﻿site_name: aiwiki
 site_description: ML과 DL로 나눠 정리한 AI 지식 문서
 site_url: ""
 
 theme:
-  name: readthedocs
-  language: ko
-  highlightjs: true
+  name: gitbook
 
 nav:
   - Home: index.md
   - ML:
       - Overview: ml/index.md
-      - L1 / L2 정규화: ml/regularization.md
-      - PCA: ml/pca.md
-      - 학습 유형: ml/learning-types.md
-      - 앙상블: ml/ensemble.md
-      - 평가 지표: ml/metrics.md
+      - 01. 학습 유형: ml/01-learning-types.md
+      - 02. L1 / L2 정규화: ml/02-regularization.md
+      - 03. PCA: ml/03-pca.md
+      - 04. 앙상블: ml/04-ensemble.md
+      - 05. 평가 지표: ml/05-metrics.md
   - DL:
       - Overview: dl/index.md
       - Train:
-          - Overview: dl/train/index.md
-          - Loss Function: dl/train/loss.md
-          - Gradient & Backpropagation: dl/train/gradient.md
-          - Learning Rate: dl/train/learning-rate.md
-          - Optimizer: dl/train/optimizer.md
-          - Activation: dl/train/activation.md
-          - Training Tools: dl/train/training-tools.md
-          - 손계산 루틴: dl/train/by-hand.md
+          - Overview: dl/01-train/index.md
+          - 01. Loss Function: dl/01-train/01-loss.md
+          - 02. Gradient & Backpropagation: dl/01-train/02-gradient.md
+          - 03. Learning Rate: dl/01-train/03-learning-rate.md
+          - 04. Optimizer: dl/01-train/04-optimizer.md
+          - 05. Activation: dl/01-train/05-activation.md
+          - 06. Training Tools: dl/01-train/06-training-tools.md
+          - 07. 손계산 루틴: dl/01-train/07-by-hand.md
       - Vision:
-          - Overview: dl/vision/index.md
-          - CNN: dl/vision/cnn.md
-          - Vision Tasks: dl/vision/tasks.md
-          - ViT: dl/vision/vit.md
-          - Swin Transformer / DETR: dl/vision/swin-detr.md
+          - Overview: dl/02-vision/index.md
+          - 01. CNN: dl/02-vision/01-cnn.md
+          - 02. Vision Tasks: dl/02-vision/02-tasks.md
+          - 03. ViT: dl/02-vision/03-vit.md
+          - 04. Swin Transformer / DETR: dl/02-vision/04-swin-detr.md
       - NLP:
-          - Overview: dl/nlp/index.md
-          - RNN / LSTM / GRU: dl/nlp/rnn.md
-          - Transformer & Attention: dl/nlp/transformer.md
-          - GPT / BERT: dl/nlp/gpt-bert.md
-          - Prompting / RLHF / CoT: dl/nlp/prompting.md
+          - Overview: dl/03-nlp/index.md
+          - 01. RNN / LSTM / GRU: dl/03-nlp/01-rnn.md
+          - 02. Transformer Overview: dl/03-nlp/02-transformer-overview.md
+          - 03. Attention 기본: dl/03-nlp/03-attention-basic.md
+          - 04. GPT / BERT: dl/03-nlp/04-gpt-bert.md
+          - 05. 효율적 Attention: dl/03-nlp/05-efficient-attention.md
+          - 06. Prompting / RLHF / CoT: dl/03-nlp/06-prompting-rlhf-cot.md
+          - 07. Llama 코드 구조: dl/03-nlp/07-llama-code-structure.md
       - Optimization:
-          - Overview: dl/optimization/index.md
-          - Quantization: dl/optimization/quantization.md
-          - Pruning: dl/optimization/pruning.md
-          - LoRA / QLoRA: dl/optimization/lora.md
+          - Overview: dl/04-optimization/index.md
+          - 01. Quantization: dl/04-optimization/01-quantization.md
+          - 02. Pruning: dl/04-optimization/02-pruning.md
+          - 03. LoRA / QLoRA: dl/04-optimization/03-lora.md
 
 markdown_extensions:
   - tables

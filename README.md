@@ -6,21 +6,10 @@ ML과 DL 중심으로 AI 지식을 정리하는 Markdown 기반 문서 사이트
 
 - [ML](docs/ml/index.md)
 - [DL](docs/dl/index.md)
-  - [Train](docs/dl/train/index.md)
-  - [Vision](docs/dl/vision/index.md)
-  - [NLP](docs/dl/nlp/index.md)
-  - [Optimization](docs/dl/optimization/index.md)
-
-## 작성 방식
-
-각 문서는 아래 흐름으로 정리합니다.
-
-1. 한 줄 정의
-2. 왜 중요한가
-3. 핵심 개념
-4. 자주 헷갈리는 점
-5. 손계산 또는 작은 예제
-6. 관련 개념 링크
+  - [Train](docs/dl/01-train/index.md)
+  - [Vision](docs/dl/02-vision/index.md)
+  - [NLP](docs/dl/03-nlp/index.md)
+  - [Optimization](docs/dl/04-optimization/index.md)
 
 ## 웹사이트로 보는 방법
 
@@ -29,22 +18,14 @@ pip install mkdocs
 mkdocs serve
 ```
 
-실행 후 브라우저에서 아래 주소를 열면 됩니다.
-
-```text
-http://127.0.0.1:8000
-```
-
-정적 파일로 빌드하려면:
-
-```powershell
-mkdocs build
-```
-
-빌드 결과는 `site/` 폴더에 생성됩니다.
+브라우저에서 `http://127.0.0.1:8000`을 열면 됩니다.
 
 ## 참고 출처
 
 - AI by Hand, Prof. Tom Yeh: https://www.byhand.ai/
 - Transformer - Six Levels of Understanding: https://www.byhand.ai/p/transformer-six-levels-of-understanding
+- Single vs Multi-Head Attention: https://www.byhand.ai/p/library-models-attention-single-vs-multi-head
 - AI by Hand Academy 소개: https://www.byhand.ai/p/ai-by-hand-academy-5ec
+- Hugging Face Transformers Llama implementation: https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama/modeling_llama.py
+- FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness: https://arxiv.org/abs/2205.14135
+- DeepNet: Scaling Transformers to 1,000 Layers: https://arxiv.org/abs/2203.00555
