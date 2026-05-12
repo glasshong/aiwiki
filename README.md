@@ -1,25 +1,7 @@
 # aiwiki
 
-ML과 DL 중심으로 AI 지식을 정리하는 Markdown 기반 문서 사이트입니다. MkDocs로 로컬에서 웹사이트처럼 확인할 수 있고, 내용은 `docs/` 아래의 Markdown 파일에 계속 추가하면 됩니다.
+ML과 DL 중심으로 AI 지식을 정리 문서.
 
-## 구조
-
-- [Common Training](docs/common/index.md)
-- [ML](docs/machine-learning/index.md)
-- [DL](docs/deep-learning/index.md)
-  - [Train](docs/deep-learning/01-train/index.md)
-  - [Vision](docs/deep-learning/02-vision/index.md)
-  - [NLP](docs/deep-learning/03-nlp/index.md)
-  - [Optimization](docs/deep-learning/04-optimization/index.md)
-
-## 웹사이트로 보는 방법
-
-```powershell
-pip install mkdocs
-mkdocs serve
-```
-
-브라우저에서 `http://127.0.0.1:8000`을 열면 됩니다.
 
 ## 참고 문헌
 
