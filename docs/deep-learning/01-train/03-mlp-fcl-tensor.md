@@ -53,6 +53,92 @@ y = layer(x)
 print(y.shape)  # [3, 2]
 ```
 
+## 이 코드가 의미하는 것
+
+```python
+layer = nn.Linear(in_features=4, out_features=2)
+```
+
+이 코드는 입력 feature 4개를 받아서 출력 feature 2개로 바꾸는 fully connected layer를 만든다는 뜻입니다.
+
+수식으로 보면 다음과 같습니다.
+
+```text
+y = xW^T + b
+```
+
+각 shape는 다음과 같습니다.
+
+```text
+x:      [3, 4]
+W:      [2, 4]
+b:      [2]
+y:      [3, 2]
+```
+
+여기서 `3`은 batch size입니다. 즉, 샘플 3개가 한 번에 들어왔고 각 샘플은 feature 4개를 가지고 있습니다.
+
+```python
+x = torch.randn(3, 4)
+```
+
+이 입력은 아래처럼 생각할 수 있습니다.
+
+```text
+sample 1: [f1, f2, f3, f4]
+sample 2: [f1, f2, f3, f4]
+sample 3: [f1, f2, f3, f4]
+```
+
+`out_features=2`이므로 각 샘플은 출력 neuron 2개의 값을 갖게 됩니다.
+
+```text
+sample 1 -> [output_1, output_2]
+sample 2 -> [output_1, output_2]
+sample 3 -> [output_1, output_2]
+```
+
+그래서 최종 출력 shape는 `[3, 2]`입니다.
+
+```python
+print(y.shape)  # [3, 2]
+```
+
+## 파라미터 수
+
+`nn.Linear(4, 2)`는 weight와 bias를 학습합니다.
+
+```text
+weight: 2 * 4 = 8개
+bias:   2개
+total:  10개
+```
+
+코드로 확인하면 다음과 같습니다.
+
+```python
+print(layer.weight.shape)  # [2, 4]
+print(layer.bias.shape)    # [2]
+```
+
+## 직관
+
+Fully Connected Layer는 입력 feature를 섞어서 새로운 feature를 만드는 layer입니다.
+
+예를 들어 입력 feature가 다음과 같다고 하면:
+
+```text
+[키, 몸무게, 나이, 운동량]
+```
+
+출력 feature 2개는 모델이 학습한 조합일 수 있습니다.
+
+```text
+[건강 위험 점수, 활동성 점수]
+```
+
+실제로 어떤 의미를 갖는지는 task와 학습 데이터에 따라 달라지지만, 핵심은 “입력 feature들을 가중합해서 새로운 표현을 만든다”는 점입니다.
+
 ## MLP
 
 MLP는 Fully Connected Layer와 activation을 여러 층 쌓은 기본 신경망입니다.
@@ -93,3 +179,11 @@ print(y.shape)  # [2, 5, 32]
 ```
 
 즉, batch나 sequence 차원은 유지되고 feature 차원만 바뀝니다.
+
+```text
+[batch, seq_len, hidden_dim]
+-> Linear(hidden_dim, new_hidden_dim)
+-> [batch, seq_len, new_hidden_dim]
+```
+
+이 관점은 Transformer의 MLP block을 이해할 때 중요합니다.

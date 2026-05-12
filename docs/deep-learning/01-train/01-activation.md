@@ -25,6 +25,8 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
+![Sigmoid graph](../../assets/activation/sigmoid.svg)
+
 ```python
 import torch
 import torch.nn as nn
@@ -46,6 +48,8 @@ $$
 \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$
 
+![Tanh graph](../../assets/activation/tanh.svg)
+
 ```python
 activation = nn.Tanh()
 y = activation(x)
@@ -60,6 +64,8 @@ ReLU는 음수는 0으로 만들고, 양수는 그대로 통과시킵니다.
 $$
 \text{ReLU}(x) = \max(0, x)
 $$
+
+![ReLU graph](../../assets/activation/relu.svg)
 
 ```python
 activation = nn.ReLU()
@@ -89,6 +95,8 @@ x & x > 0 \\
 \end{cases}
 $$
 
+![Leaky ReLU graph](../../assets/activation/leaky-relu.svg)
+
 ```python
 activation = nn.LeakyReLU(negative_slope=0.01)
 y = activation(x)
@@ -112,6 +120,8 @@ $$
 \text{GELU}(x) \approx 0.5x \left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}(x + 0.044715x^3)\right)\right)
 $$
 
+![GELU graph](../../assets/activation/gelu.svg)
+
 ```python
 activation = nn.GELU()
 y = activation(x)
@@ -127,6 +137,8 @@ $$
 \text{SiLU}(x) = x \cdot \sigma(x)
 $$
 
+![SiLU graph](../../assets/activation/silu.svg)
+
 ```python
 activation = nn.SiLU()
 y = activation(x)
@@ -141,6 +153,10 @@ Softmax는 여러 logit을 확률 분포로 바꿉니다.
 $$
 \text{softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}
 $$
+
+![Softmax probability graph](../../assets/activation/softmax.svg)
+
+Softmax는 입력 하나를 출력 하나로 바꾸는 스칼라 함수가 아니라 여러 logit을 확률 분포로 바꾸는 vector function입니다. 위 그래프에서는 비교를 위해 3-class logit `[x, 0, -1]`에서 첫 번째 class의 softmax 확률이 `x`에 따라 어떻게 변하는지 그렸습니다.
 
 ```python
 logits = torch.tensor([[2.0, 0.5, -1.0]])

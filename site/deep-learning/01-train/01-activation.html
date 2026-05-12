@@ -297,6 +297,7 @@ Theme by GitBook
 <p>$$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$</p>
+<p><img alt="Sigmoid graph" src="../../assets/activation/sigmoid.svg" /></p>
 <pre><code class="language-python">import torch
 import torch.nn as nn
 
@@ -312,6 +313,7 @@ print(y)
 <p>$$
 \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$</p>
+<p><img alt="Tanh graph" src="../../assets/activation/tanh.svg" /></p>
 <pre><code class="language-python">activation = nn.Tanh()
 y = activation(x)
 </code></pre>
@@ -321,6 +323,7 @@ y = activation(x)
 <p>$$
 \text{ReLU}(x) = \max(0, x)
 $$</p>
+<p><img alt="ReLU graph" src="../../assets/activation/relu.svg" /></p>
 <pre><code class="language-python">activation = nn.ReLU()
 y = activation(x)
 </code></pre>
@@ -344,6 +347,7 @@ x &amp; x &gt; 0 \
 \alpha x &amp; x \le 0
 \end{cases}
 $$</p>
+<p><img alt="Leaky ReLU graph" src="../../assets/activation/leaky-relu.svg" /></p>
 <pre><code class="language-python">activation = nn.LeakyReLU(negative_slope=0.01)
 y = activation(x)
 </code></pre>
@@ -358,6 +362,7 @@ $$</p>
 <p>$$
 \text{GELU}(x) \approx 0.5x \left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}(x + 0.044715x^3)\right)\right)
 $$</p>
+<p><img alt="GELU graph" src="../../assets/activation/gelu.svg" /></p>
 <pre><code class="language-python">activation = nn.GELU()
 y = activation(x)
 </code></pre>
@@ -367,6 +372,7 @@ y = activation(x)
 <p>$$
 \text{SiLU}(x) = x \cdot \sigma(x)
 $$</p>
+<p><img alt="SiLU graph" src="../../assets/activation/silu.svg" /></p>
 <pre><code class="language-python">activation = nn.SiLU()
 y = activation(x)
 </code></pre>
@@ -376,6 +382,8 @@ y = activation(x)
 <p>$$
 \text{softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}
 $$</p>
+<p><img alt="Softmax probability graph" src="../../assets/activation/softmax.svg" /></p>
+<p>Softmax는 입력 하나를 출력 하나로 바꾸는 스칼라 함수가 아니라 여러 logit을 확률 분포로 바꾸는 vector function입니다. 위 그래프에서는 비교를 위해 3-class logit <code>[x, 0, -1]</code>에서 첫 번째 class의 softmax 확률이 <code>x</code>에 따라 어떻게 변하는지 그렸습니다.</p>
 <pre><code class="language-python">logits = torch.tensor([[2.0, 0.5, -1.0]])
 probs = torch.softmax(logits, dim=-1)
 
