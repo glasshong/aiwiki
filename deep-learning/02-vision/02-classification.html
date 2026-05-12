@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>02. Image Classification - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="02-classification.html" class="active">02. Image Classification</a>
+</li>
+
+<li>
+<a href="03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="image-classification">Image Classification<a class="headerlink" href="#image-classification" title="Permanent link">&para;</a></h1>
+<p>Image Classification은 이미지 전체에 대해 하나의 라벨 또는 여러 라벨을 예측하는 task입니다.</p>
+<pre><code class="language-text">image -&gt; feature extractor -&gt; classifier head -&gt; class probability
+</code></pre>
+<h2 id="_1">출력 형태<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>단일 라벨 분류:</p>
+<pre><code class="language-text">고양이 이미지 -&gt; cat
+</code></pre>
+<p>다중 라벨 분류:</p>
+<pre><code class="language-text">실내 사진 -&gt; chair, table, window
+</code></pre>
+<h2 id="_2">기본 구조<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="cnn">CNN 기반 구조<a class="headerlink" href="#cnn" title="Permanent link">&para;</a></h3>
+<pre><code class="language-text">Input image
+-&gt; convolution blocks
+-&gt; global average pooling
+-&gt; fully connected layer
+-&gt; logits
+</code></pre>
+<p>CNN은 작은 filter로 지역 패턴을 뽑고, layer가 깊어질수록 edge, texture, part, object-level feature를 학습합니다.</p>
+<h3 id="transformer">Transformer 기반 구조<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
+<pre><code class="language-text">Input image
+-&gt; patch embedding
+-&gt; transformer encoder
+-&gt; class token or pooled feature
+-&gt; classifier head
+</code></pre>
+<p>ViT는 이미지를 patch로 나누고 각 patch를 token처럼 다룹니다.</p>
+<h2 id="_3">예시 모델<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>구조</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlexNet</td>
+<td>CNN</td>
+<td>초기 딥러닝 이미지 분류 대표 모델</td>
+</tr>
+<tr>
+<td>VGG</td>
+<td>CNN</td>
+<td>단순한 3x3 convolution을 깊게 쌓음</td>
+</tr>
+<tr>
+<td>ResNet</td>
+<td>CNN + residual</td>
+<td>skip connection으로 깊은 모델 학습 안정화</td>
+</tr>
+<tr>
+<td>EfficientNet</td>
+<td>CNN</td>
+<td>depth, width, resolution을 균형 있게 scaling</td>
+</tr>
+<tr>
+<td>ViT</td>
+<td>Transformer</td>
+<td>image patch를 token처럼 처리</td>
+</tr>
+</tbody>
+</table>
+<h2 id="loss-metric">Loss와 Metric<a class="headerlink" href="#loss-metric" title="Permanent link">&para;</a></h2>
+<p>단일 라벨 분류는 보통 <code>CrossEntropyLoss</code>를 사용합니다.</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+logits = torch.randn(8, 10)   # [batch, num_classes]
+targets = torch.randint(0, 10, (8,))
+
+loss = nn.CrossEntropyLoss()(logits, targets)
+</code></pre>
+<p>자주 보는 metric:</p>
+<ul>
+<li>accuracy</li>
+<li>top-k accuracy</li>
+<li>precision / recall / F1-score</li>
+<li>confusion matrix</li>
+</ul>
+<h2 id="_4">주의점<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>클래스 불균형이 있으면 accuracy만 보면 안 됩니다.</li>
+<li>train과 test 이미지 분포가 다르면 성능이 크게 떨어질 수 있습니다.</li>
+<li>작은 데이터에서는 data augmentation과 pretrained model 활용이 중요합니다.</li>
+</ul>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+<title id="title">Forward and Backward Pass</title>
+<desc id="desc">A neural network training flow showing forward pass from input to loss and backward pass from loss to gradients and parameter update.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="490" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">Forward / Backward Pass</text>
+
+<defs>
+  <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+    <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+    <path d="M2,2 L10,6 L2,10 Z" fill="#dc2626"/>
+  </marker>
+</defs>
+
+<g font-family="Arial, sans-serif">
+  <text x="120" y="84" font-size="17" font-weight="700" fill="#2563eb">Forward pass: prediction and loss</text>
+  <text x="120" y="462" font-size="17" font-weight="700" fill="#dc2626">Backward pass: gradient and update</text>
+
+  <rect x="55" y="135" width="120" height="68" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="115" y="164" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Input</text>
+  <text x="115" y="185" text-anchor="middle" font-size="12" fill="#475569">x</text>
+
+  <rect x="235" y="125" width="145" height="88" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="307.5" y="154" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Layer 1</text>
+  <text x="307.5" y="176" text-anchor="middle" font-size="12" fill="#475569">W1, b1</text>
+  <text x="307.5" y="194" text-anchor="middle" font-size="12" fill="#475569">activation</text>
+
+  <rect x="440" y="125" width="145" height="88" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="512.5" y="154" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Layer 2</text>
+  <text x="512.5" y="176" text-anchor="middle" font-size="12" fill="#475569">W2, b2</text>
+  <text x="512.5" y="194" text-anchor="middle" font-size="12" fill="#475569">logits</text>
+
+  <rect x="650" y="135" width="120" height="68" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="710" y="164" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Prediction</text>
+  <text x="710" y="185" text-anchor="middle" font-size="12" fill="#475569">y_hat</text>
+
+  <rect x="825" y="135" width="110" height="68" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="880" y="164" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Loss</text>
+  <text x="880" y="185" text-anchor="middle" font-size="12" fill="#475569">L(y_hat, y)</text>
+
+  <line x1="176" y1="169" x2="226" y2="169" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <line x1="381" y1="169" x2="431" y2="169" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <line x1="586" y1="169" x2="641" y2="169" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <line x1="771" y1="169" x2="816" y2="169" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+
+  <path d="M880 220 C850 322, 650 330, 535 250" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <path d="M512 250 C455 325, 350 325, 315 225" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <path d="M307 225 C270 330, 165 320, 120 220" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+
+  <rect x="235" y="300" width="145" height="66" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="307.5" y="329" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">grad W1, b1</text>
+  <text x="307.5" y="350" text-anchor="middle" font-size="12" fill="#475569">dL/dW1</text>
+
+  <rect x="440" y="300" width="145" height="66" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="512.5" y="329" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">grad W2, b2</text>
+  <text x="512.5" y="350" text-anchor="middle" font-size="12" fill="#475569">dL/dW2</text>
+
+  <rect x="650" y="300" width="145" height="66" rx="12" fill="#fefce8" stroke="#fde047" stroke-width="2"/>
+  <text x="722.5" y="329" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">Optimizer</text>
+  <text x="722.5" y="350" text-anchor="middle" font-size="12" fill="#475569">W = W - lr * grad</text>
+
+  <line x1="585" y1="333" x2="641" y2="333" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <line x1="380" y1="333" x2="431" y2="333" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+
+  <text x="490" y="412" text-anchor="middle" font-size="14" fill="#475569">Forward computes outputs. Backward computes gradients. Optimizer updates parameters.</text>
+</g>
+</svg>

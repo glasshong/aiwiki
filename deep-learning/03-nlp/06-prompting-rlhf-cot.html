@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>06. Prompting / RLHF / CoT - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="06-prompting-rlhf-cot.html" class="active">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="prompting-rlhf-cot">Prompting / RLHF / CoT<a class="headerlink" href="#prompting-rlhf-cot" title="Permanent link">&para;</a></h1>
+<p>LLM을 실제 작업에 쓰기 위해서는 모델 자체뿐 아니라 입력 구성, 외부 지식 연결, 사람 피드백 기반 정렬이 중요합니다.</p>
+<h2 id="zero-shot">Zero-shot<a class="headerlink" href="#zero-shot" title="Permanent link">&para;</a></h2>
+<p>예시 없이 지시문만으로 모델이 작업을 수행하게 합니다.</p>
+<pre><code class="language-text">다음 문장을 긍정/부정으로 분류해줘: 이 제품은 생각보다 좋았다.
+</code></pre>
+<h2 id="few-shot">Few-shot<a class="headerlink" href="#few-shot" title="Permanent link">&para;</a></h2>
+<p>프롬프트 안에 몇 개의 입력/출력 예시를 넣어 원하는 패턴을 보여줍니다.</p>
+<pre><code class="language-text">문장: 배송이 너무 느렸다.
+라벨: 부정
+
+문장: 품질이 좋고 마음에 든다.
+라벨: 긍정
+
+문장: 포장이 찢어져 있었다.
+라벨:
+</code></pre>
+<h2 id="cot">CoT<a class="headerlink" href="#cot" title="Permanent link">&para;</a></h2>
+<p>Chain-of-Thought는 모델이 중간 추론 단계를 거쳐 답하도록 유도하는 방식입니다. 복잡한 수학, 논리, 계획 문제에서 도움이 됩니다.</p>
+<h2 id="transfer-learning">Transfer Learning<a class="headerlink" href="#transfer-learning" title="Permanent link">&para;</a></h2>
+<p>Transfer Learning은 큰 데이터로 미리 학습한 모델을 다른 task나 도메인에 재사용하는 방식입니다.</p>
+<pre><code class="language-text">pretrained model -&gt; task-specific fine-tuning -&gt; downstream task
+</code></pre>
+<p>예를 들어 BERT를 사전학습한 뒤 감성 분류 데이터로 fine-tuning하면, 처음부터 학습하는 것보다 적은 데이터로 좋은 성능을 얻을 수 있습니다.</p>
+<h2 id="reinforcement-learning">Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h2>
+<p>Reinforcement Learning은 agent가 environment에서 action을 선택하고 reward를 받아 더 좋은 policy를 학습하는 방법입니다.</p>
+<pre><code class="language-text">state -&gt; action -&gt; reward -&gt; policy update
+</code></pre>
+<p>LLM에서는 사람 선호나 보상 모델을 이용해 응답 성향을 조정하는 단계와 연결됩니다.</p>
+<h2 id="rlhf">RLHF<a class="headerlink" href="#rlhf" title="Permanent link">&para;</a></h2>
+<p>Reinforcement Learning from Human Feedback은 사람의 선호 피드백을 이용해 모델 응답 성향을 조정합니다.</p>
+<p>일반적인 흐름은 다음과 같습니다.</p>
+<pre><code class="language-text">supervised fine-tuning -&gt; reward model training -&gt; RL optimization
+</code></pre>
+<p>단순히 정답을 맞히는 것보다 유용하고 안전한 답변을 만들기 위한 정렬 과정입니다.</p>
+<h2 id="rag">RAG<a class="headerlink" href="#rag" title="Permanent link">&para;</a></h2>
+<p>Retrieval-Augmented Generation은 질문과 관련된 문서를 먼저 검색하고, 그 결과를 LLM 입력에 함께 넣어 답변을 생성하는 방식입니다.</p>
+<pre><code class="language-text">Question -&gt; Retrieve documents -&gt; Add context -&gt; Generate answer
+</code></pre>
+<ul>
+<li>장점: 모델 파라미터에 없는 최신 정보나 사내 문서를 활용할 수 있습니다.</li>
+<li>주의점: 검색 품질, chunk 크기, reranking 여부가 답변 품질에 크게 영향을 줍니다.</li>
+</ul>
+<h2 id="reranking">Reranking<a class="headerlink" href="#reranking" title="Permanent link">&para;</a></h2>
+<p>초기 검색 결과를 다시 점수화해 더 관련성 높은 문서를 위로 올리는 과정입니다. 정확도는 좋아질 수 있지만, LLM 기반 reranking은 호출 비용과 시간이 늘어날 수 있습니다.</p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

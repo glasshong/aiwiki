@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>03. Object Detection - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="03-detection.html" class="active">03. Object Detection</a>
+</li>
+
+<li>
+<a href="04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="object-detection">Object Detection<a class="headerlink" href="#object-detection" title="Permanent link">&para;</a></h1>
+<p>Object Detection은 이미지 안의 객체 위치와 클래스를 함께 예측하는 task입니다.</p>
+<pre><code class="language-text">image -&gt; detector -&gt; bounding boxes + class labels + confidence scores
+</code></pre>
+<h2 id="_1">출력 형태<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>각 객체마다 보통 다음 정보를 예측합니다.</p>
+<pre><code class="language-text">[x_min, y_min, x_max, y_max, class, score]
+</code></pre>
+<p>예시:</p>
+<pre><code class="language-text">person: box=(120, 50, 300, 420), score=0.97
+car: box=(330, 210, 520, 360), score=0.91
+</code></pre>
+<h2 id="_2">대표 구조<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="two-stage-detector">Two-stage Detector<a class="headerlink" href="#two-stage-detector" title="Permanent link">&para;</a></h3>
+<p>먼저 객체 후보 영역을 찾고, 그 후보를 다시 분류/보정합니다.</p>
+<pre><code class="language-text">image -&gt; backbone -&gt; region proposals -&gt; ROI head -&gt; boxes + classes
+</code></pre>
+<p>대표 모델:</p>
+<ul>
+<li>R-CNN</li>
+<li>Fast R-CNN</li>
+<li>Faster R-CNN</li>
+<li>Mask R-CNN</li>
+</ul>
+<p>장점은 정확도가 좋다는 점이고, 단점은 구조가 상대적으로 복잡하고 느릴 수 있다는 점입니다.</p>
+<h3 id="one-stage-detector">One-stage Detector<a class="headerlink" href="#one-stage-detector" title="Permanent link">&para;</a></h3>
+<p>객체 후보 생성과 분류를 한 번에 처리합니다.</p>
+<pre><code class="language-text">image -&gt; backbone + neck -&gt; detection head -&gt; boxes + classes
+</code></pre>
+<p>대표 모델:</p>
+<ul>
+<li>YOLO</li>
+<li>SSD</li>
+<li>RetinaNet</li>
+</ul>
+<p>실시간 처리에 강합니다. YOLO 계열은 속도와 성능의 균형이 좋아 실제 서비스에서 많이 쓰입니다.</p>
+<h3 id="transformer-detector">Transformer Detector<a class="headerlink" href="#transformer-detector" title="Permanent link">&para;</a></h3>
+<p>Detection을 set prediction 문제로 보고, object query가 객체를 직접 예측합니다.</p>
+<pre><code class="language-text">image -&gt; CNN backbone -&gt; transformer encoder-decoder -&gt; object queries -&gt; predictions
+</code></pre>
+<p>대표 모델:</p>
+<ul>
+<li>DETR</li>
+<li>Deformable DETR</li>
+<li>DINO</li>
+</ul>
+<p>DETR은 anchor와 NMS 의존도를 줄인 구조로 이해할 수 있습니다.</p>
+<h2 id="loss">Loss 구성<a class="headerlink" href="#loss" title="Permanent link">&para;</a></h2>
+<p>Detection loss는 보통 여러 loss를 합칩니다.</p>
+<pre><code class="language-text">total loss = classification loss + box regression loss + objectness loss
+</code></pre>
+<ul>
+<li>classification loss: 객체 class를 맞히는 loss</li>
+<li>box regression loss: bounding box 위치를 맞히는 loss</li>
+<li>objectness loss: 객체가 있는지 없는지 판단하는 loss</li>
+</ul>
+<h2 id="metric">Metric<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h2>
+<p>Detection에서는 mAP를 자주 사용합니다.</p>
+<ul>
+<li>IoU: 예측 box와 정답 box가 얼마나 겹치는지</li>
+<li>AP: 한 class에 대한 precision-recall 성능</li>
+<li>mAP: 여러 class AP의 평균</li>
+</ul>
+<h2 id="_3">주의점<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>작은 객체는 놓치기 쉽습니다.</li>
+<li>annotation 품질이 성능에 큰 영향을 줍니다.</li>
+<li>confidence threshold와 NMS 설정에 따라 결과가 달라질 수 있습니다.</li>
+</ul>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>01. Activation - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-activation.html" class="active">01. Activation</a>
+</li>
+
+<li>
+<a href="02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="activation">Activation<a class="headerlink" href="#activation" title="Permanent link">&para;</a></h1>
+<p>Activation function은 신경망에 비선형성을 넣는 함수입니다. 여러 개의 linear layer를 쌓아도 activation이 없다면 전체 모델은 결국 하나의 linear transformation과 거의 같아집니다.</p>
+<pre><code class="language-text">Linear -&gt; Activation -&gt; Linear -&gt; Activation -&gt; Output
+</code></pre>
+<h2 id="_1">왜 필요한가<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>선형 변환만 있으면 모델은 복잡한 패턴을 표현하기 어렵습니다.</p>
+<pre><code class="language-text">y = W2(W1x + b1) + b2
+  = (W2W1)x + (W2b1 + b2)
+</code></pre>
+<p>즉, linear layer를 여러 번 쌓아도 하나의 linear layer로 합쳐질 수 있습니다. Activation은 중간에 비선형 변환을 넣어 decision boundary를 더 복잡하게 만들 수 있게 합니다.</p>
+<h2 id="sigmoid">Sigmoid<a class="headerlink" href="#sigmoid" title="Permanent link">&para;</a></h2>
+<p>Sigmoid는 입력을 0과 1 사이 값으로 압축합니다.</p>
+<p>$$
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$</p>
+<p><img alt="Sigmoid graph" src="../../assets/activation/sigmoid.svg" /></p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+x = torch.tensor([-2.0, 0.0, 2.0])
+activation = nn.Sigmoid()
+
+y = activation(x)
+print(y)
+</code></pre>
+<p>주로 이진 분류의 확률 해석에 사용됩니다. 다만 입력의 절댓값이 커지면 gradient가 매우 작아져 vanishing gradient 문제가 생길 수 있습니다.</p>
+<h2 id="tanh">Tanh<a class="headerlink" href="#tanh" title="Permanent link">&para;</a></h2>
+<p>Tanh는 입력을 -1과 1 사이 값으로 압축합니다.</p>
+<p>$$
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$</p>
+<p><img alt="Tanh graph" src="../../assets/activation/tanh.svg" /></p>
+<pre><code class="language-python">activation = nn.Tanh()
+y = activation(x)
+</code></pre>
+<p>Sigmoid보다 출력이 0을 중심으로 대칭이라 RNN 계열에서 자주 사용되었습니다. 하지만 saturation 구간에서는 역시 gradient가 작아질 수 있습니다.</p>
+<h2 id="relu">ReLU<a class="headerlink" href="#relu" title="Permanent link">&para;</a></h2>
+<p>ReLU는 음수는 0으로 만들고, 양수는 그대로 통과시킵니다.</p>
+<p>$$
+\text{ReLU}(x) = \max(0, x)
+$$</p>
+<p><img alt="ReLU graph" src="../../assets/activation/relu.svg" /></p>
+<pre><code class="language-python">activation = nn.ReLU()
+y = activation(x)
+</code></pre>
+<p>장점:</p>
+<ul>
+<li>계산이 빠릅니다.</li>
+<li>양수 구간에서 gradient가 잘 흐릅니다.</li>
+<li>CNN, MLP에서 기본 선택지로 많이 쓰입니다.</li>
+</ul>
+<p>주의할 점:</p>
+<ul>
+<li>입력이 계속 음수로 들어오면 출력이 0이 되고 gradient도 0이 될 수 있습니다.</li>
+<li>이를 dying ReLU 문제라고 부릅니다.</li>
+</ul>
+<h2 id="leaky-relu">Leaky ReLU<a class="headerlink" href="#leaky-relu" title="Permanent link">&para;</a></h2>
+<p>Leaky ReLU는 음수 구간도 아주 작은 기울기로 통과시킵니다.</p>
+<p>$$
+\text{LeakyReLU}(x) =
+\begin{cases}
+x &amp; x &gt; 0 \
+\alpha x &amp; x \le 0
+\end{cases}
+$$</p>
+<p><img alt="Leaky ReLU graph" src="../../assets/activation/leaky-relu.svg" /></p>
+<pre><code class="language-python">activation = nn.LeakyReLU(negative_slope=0.01)
+y = activation(x)
+</code></pre>
+<p>ReLU의 dying ReLU 문제를 완화할 수 있습니다.</p>
+<h2 id="gelu">GELU<a class="headerlink" href="#gelu" title="Permanent link">&para;</a></h2>
+<p>GELU는 입력값을 확률적으로 부드럽게 통과시키는 형태의 activation입니다. Transformer, BERT, GPT 계열에서 자주 등장합니다.</p>
+<p>$$
+\text{GELU}(x) = x \Phi(x)
+$$</p>
+<p>여기서 (\Phi(x))는 표준정규분포의 누적분포함수입니다.</p>
+<p>자주 쓰는 근사식은 다음과 같습니다.</p>
+<p>$$
+\text{GELU}(x) \approx 0.5x \left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}(x + 0.044715x^3)\right)\right)
+$$</p>
+<p><img alt="GELU graph" src="../../assets/activation/gelu.svg" /></p>
+<pre><code class="language-python">activation = nn.GELU()
+y = activation(x)
+</code></pre>
+<p>ReLU보다 부드럽게 동작하며, 큰 Transformer 모델의 MLP block에서 많이 사용됩니다.</p>
+<h2 id="silu-swish">SiLU / Swish<a class="headerlink" href="#silu-swish" title="Permanent link">&para;</a></h2>
+<p>SiLU는 입력에 sigmoid gate를 곱한 형태입니다.</p>
+<p>$$
+\text{SiLU}(x) = x \cdot \sigma(x)
+$$</p>
+<p><img alt="SiLU graph" src="../../assets/activation/silu.svg" /></p>
+<pre><code class="language-python">activation = nn.SiLU()
+y = activation(x)
+</code></pre>
+<p>Llama 계열의 MLP에서는 SiLU 기반의 gated MLP 구조가 자주 사용됩니다.</p>
+<h2 id="softmax">Softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h2>
+<p>Softmax는 여러 logit을 확률 분포로 바꿉니다.</p>
+<p>$$
+\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}
+$$</p>
+<p><img alt="Softmax probability graph" src="../../assets/activation/softmax.svg" /></p>
+<p>Softmax는 입력 하나를 출력 하나로 바꾸는 스칼라 함수가 아니라 여러 logit을 확률 분포로 바꾸는 vector function입니다. 위 그래프에서는 비교를 위해 3-class logit <code>[x, 0, -1]</code>에서 첫 번째 class의 softmax 확률이 <code>x</code>에 따라 어떻게 변하는지 그렸습니다.</p>
+<pre><code class="language-python">logits = torch.tensor([[2.0, 0.5, -1.0]])
+probs = torch.softmax(logits, dim=-1)
+
+print(probs)
+print(probs.sum(dim=-1))
+</code></pre>
+<p>분류 문제에서 각 클래스 확률을 볼 때 사용합니다. 다만 PyTorch의 <code>nn.CrossEntropyLoss</code>는 내부에서 <code>log_softmax</code>를 처리하므로, 학습 loss에 넣기 전에는 softmax를 직접 적용하지 않는 것이 일반적입니다.</p>
+<h2 id="pytorch-mlp">PyTorch MLP 예시<a class="headerlink" href="#pytorch-mlp" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+class MLP(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, output_dim),
+        )
+
+    def forward(self, x):
+        return self.net(x)
+
+model = MLP(input_dim=10, hidden_dim=32, output_dim=3)
+x = torch.randn(4, 10)
+logits = model(x)
+
+print(logits.shape)  # [4, 3]
+</code></pre>
+<h2 id="_2">선택 기준<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>출력 범위</th>
+<th>주 사용처</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigmoid</td>
+<td>0 ~ 1</td>
+<td>이진 확률 해석</td>
+<td>saturation에 취약</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td>-1 ~ 1</td>
+<td>RNN, 작은 네트워크</td>
+<td>0 중심 출력</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>0 ~ inf</td>
+<td>CNN, MLP</td>
+<td>빠르고 단순</td>
+</tr>
+<tr>
+<td>Leaky ReLU</td>
+<td>-inf ~ inf</td>
+<td>ReLU 대안</td>
+<td>dying ReLU 완화</td>
+</tr>
+<tr>
+<td>GELU</td>
+<td>-inf ~ inf</td>
+<td>Transformer</td>
+<td>부드러운 gating</td>
+</tr>
+<tr>
+<td>SiLU</td>
+<td>-inf ~ inf</td>
+<td>LLM MLP</td>
+<td>sigmoid gate 형태</td>
+</tr>
+<tr>
+<td>Softmax</td>
+<td>합이 1</td>
+<td>다중 클래스 확률</td>
+<td>logit을 확률 분포로 변환</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">자주 하는 실수<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>CrossEntropyLoss</code> 전에 softmax를 적용함</li>
+<li><code>BCEWithLogitsLoss</code> 전에 sigmoid를 적용함</li>
+<li>hidden layer에서 sigmoid를 과하게 사용해 gradient가 사라짐</li>
+<li>output layer activation과 loss function의 조합을 맞추지 않음</li>
+</ul>
+<p>일반적으로 hidden layer에는 ReLU, GELU, SiLU 계열을 많이 쓰고, output의 activation은 task와 loss function에 맞춰 결정합니다.</p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>08. Autoencoder / MAE - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="08-autoencoder-mae.html" class="active">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="autoencoder-masked-autoencoder">Autoencoder / Masked Autoencoder<a class="headerlink" href="#autoencoder-masked-autoencoder" title="Permanent link">&para;</a></h1>
+<p>Autoencoder는 입력을 압축했다가 다시 복원하도록 학습하는 구조입니다.</p>
+<pre><code class="language-text">input -&gt; encoder -&gt; latent representation -&gt; decoder -&gt; reconstruction
+</code></pre>
+<h2 id="autoencoder">Autoencoder<a class="headerlink" href="#autoencoder" title="Permanent link">&para;</a></h2>
+<p>Autoencoder는 입력과 출력이 같은 형태입니다. 모델은 중간의 작은 latent vector에 중요한 정보를 담도록 학습합니다.</p>
+<p>주요 사용처:</p>
+<ul>
+<li>차원 축소</li>
+<li>노이즈 제거</li>
+<li>이상 탐지</li>
+<li>representation learning</li>
+</ul>
+<h2 id="denoising-autoencoder">Denoising Autoencoder<a class="headerlink" href="#denoising-autoencoder" title="Permanent link">&para;</a></h2>
+<p>입력에 일부러 noise를 넣고 원본을 복원하도록 학습합니다. 모델이 단순 복사가 아니라 핵심 구조를 배우도록 돕습니다.</p>
+<h2 id="masked-autoencoder">Masked Autoencoder<a class="headerlink" href="#masked-autoencoder" title="Permanent link">&para;</a></h2>
+<p>Masked Autoencoder는 입력의 일부를 가리고, 가려진 부분을 복원하도록 학습합니다.</p>
+<p>NLP의 BERT는 masked language modeling으로 가려진 token을 맞힙니다. Vision의 MAE는 이미지 patch 일부를 가리고 복원합니다.</p>
+<pre><code class="language-text">원본 입력 -&gt; 일부 mask -&gt; encoder -&gt; decoder -&gt; masked part 복원
+</code></pre>
+<h2 id="_1">왜 중요한가<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>label 없이도 데이터 자체에서 학습 신호를 만들 수 있습니다. 그래서 대규모 사전학습에서 유용합니다.</p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

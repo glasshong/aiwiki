@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>06. Forward / Backward - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="../interview/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../interview/dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="../interview/vision-flow.html" class="">Vision Flow</a>
+</li>
+
+<li>
+<a href="../interview/nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="../interview/ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="06-forward-backward.html" class="active">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../deep-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../deep-learning/01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../deep-learning/02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../deep-learning/03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../deep-learning/04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="forward-backward">Forward / Backward<a class="headerlink" href="#forward-backward" title="Permanent link">&para;</a></h1>
+<p>순전파와 역전파는 모델 학습의 기본 흐름입니다.</p>
+<pre><code class="language-text">input -&gt; forward -&gt; prediction -&gt; loss -&gt; backward -&gt; gradient -&gt; update
+</code></pre>
+<p><img alt="Forward and backward pass" src="../assets/forward-backward.svg" /></p>
+<h2 id="_1">왜 하는가<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>모델 학습은 크게 두 가지 질문을 반복해서 푸는 과정입니다.</p>
+<ol>
+<li>현재 파라미터로 예측하면 얼마나 틀리는가?</li>
+<li>loss를 줄이려면 각 파라미터를 어느 방향으로 바꿔야 하는가?</li>
+</ol>
+<p>순전파는 첫 번째 질문에 답합니다. 입력을 모델에 통과시켜 예측값과 loss를 계산합니다.</p>
+<p>역전파는 두 번째 질문에 답합니다. loss에서 시작해 각 파라미터가 loss에 얼마나 영향을 줬는지 gradient를 계산합니다.</p>
+<h2 id="forward-pass">Forward Pass<a class="headerlink" href="#forward-pass" title="Permanent link">&para;</a></h2>
+<p>순전파는 입력 데이터를 모델에 넣어 예측값을 계산하는 과정입니다.</p>
+<pre><code class="language-python">outputs = model(inputs)
+loss = criterion(outputs, targets)
+</code></pre>
+<p>이 단계에서는 각 layer가 입력을 받아 출력을 만들고, 마지막에 loss를 계산합니다.</p>
+<pre><code class="language-text">x -&gt; layer1 -&gt; activation -&gt; layer2 -&gt; prediction -&gt; loss
+</code></pre>
+<p>순전파 결과로 얻는 것:</p>
+<ul>
+<li>prediction</li>
+<li>loss</li>
+<li>backward 계산에 필요한 중간 activation</li>
+<li>연산 그래프</li>
+</ul>
+<h2 id="backward-pass">Backward Pass<a class="headerlink" href="#backward-pass" title="Permanent link">&para;</a></h2>
+<p>역전파는 loss에서 시작해 각 파라미터가 loss에 얼마나 영향을 줬는지 gradient를 계산하는 과정입니다.</p>
+<pre><code class="language-python">loss.backward()
+</code></pre>
+<p>PyTorch는 forward 과정에서 연산 그래프를 저장해 두었다가 <code>backward()</code>가 호출되면 chain rule로 gradient를 계산합니다.</p>
+<pre><code class="language-text">loss -&gt; dL/dW2 -&gt; dL/dW1 -&gt; optimizer update
+</code></pre>
+<p>역전파 결과로 얻는 것:</p>
+<ul>
+<li>각 파라미터의 <code>.grad</code></li>
+<li>weight를 업데이트할 방향</li>
+<li>layer별 학습 신호</li>
+</ul>
+<h2 id="chain-rule">Chain Rule 관점<a class="headerlink" href="#chain-rule" title="Permanent link">&para;</a></h2>
+<p>모델은 여러 함수가 이어진 형태입니다.</p>
+<pre><code class="language-text">y = f3(f2(f1(x)))
+</code></pre>
+<p>loss가 마지막 출력에 대해 계산되므로, 앞쪽 파라미터의 영향은 chain rule로 연결해서 구합니다.</p>
+<pre><code class="language-text">dL/dW1 = dL/dy * dy/df2 * df2/df1 * df1/dW1
+</code></pre>
+<p>이것이 역전파가 뒤에서 앞으로 gradient를 전달하는 이유입니다.</p>
+<h2 id="_2">전체 학습 루프<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">for inputs, targets in dataloader:
+    optimizer.zero_grad()
+
+    outputs = model(inputs)          # forward
+    loss = criterion(outputs, targets)
+
+    loss.backward()                  # backward
+    optimizer.step()                 # update
+</code></pre>
+<p>각 줄의 역할:</p>
+<ul>
+<li><code>optimizer.zero_grad()</code>: 이전 step의 gradient를 비웁니다.</li>
+<li><code>model(inputs)</code>: 순전파로 예측값을 만듭니다.</li>
+<li><code>criterion(outputs, targets)</code>: loss를 계산합니다.</li>
+<li><code>loss.backward()</code>: 역전파로 gradient를 계산합니다.</li>
+<li><code>optimizer.step()</code>: gradient를 이용해 파라미터를 업데이트합니다.</li>
+</ul>
+<h2 id="evaluation-backward">Evaluation에서는 왜 backward를 안 하나<a class="headerlink" href="#evaluation-backward" title="Permanent link">&para;</a></h2>
+<p>평가 단계에서는 모델을 업데이트하지 않습니다. 예측 성능만 확인하면 되므로 gradient 계산이 필요 없습니다.</p>
+<pre><code class="language-python">model.eval()
+
+with torch.no_grad():
+    outputs = model(inputs)
+</code></pre>
+<p><code>torch.no_grad()</code>를 쓰면:</p>
+<ul>
+<li>연산 그래프를 저장하지 않습니다.</li>
+<li>메모리를 덜 씁니다.</li>
+<li>추론 속도가 빨라질 수 있습니다.</li>
+</ul>
+<h2 id="_3">자주 하는 실수<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>optimizer.zero_grad()</code>를 빼먹어 gradient가 계속 누적됨</li>
+<li><code>loss.backward()</code> 전에 loss가 scalar인지 확인하지 않음</li>
+<li>evaluation 중에도 gradient를 계산해 메모리를 낭비함</li>
+<li><code>model.train()</code>과 <code>model.eval()</code> 전환을 빼먹음</li>
+</ul>
+<h2 id="_4">면접 포인트<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Forward는 예측과 loss를 계산하는 과정입니다.</li>
+<li>Backward는 loss를 줄이기 위한 gradient를 계산하는 과정입니다.</li>
+<li>Optimizer는 gradient를 이용해 실제 파라미터를 업데이트합니다.</li>
+<li>PyTorch의 <code>backward()</code>는 forward 때 만들어진 연산 그래프를 따라 chain rule을 적용합니다.</li>
+</ul>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../js/main.js"></script>
+<script src="../search/main.js"></script>
+<script src="../js/gitbook.min.js"></script>
+<script src="../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Vision Flow - aiwiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="ML과 DL로 나눠 정리한 AI 지식 문서">
+<meta name="generator" content="mkdocs-1.6.1, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../index.html" target="_blank" class="custom-link">aiwiki</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="index.html">
+<a href="../index.html">Home</a>
+<li class="header">Interview Flow</li>
+
+<li>
+<a href="index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="dl-flow.html" class="">Deep Learning Flow</a>
+</li>
+
+<li>
+<a href="vision-flow.html" class="active">Vision Flow</a>
+</li>
+
+<li>
+<a href="nlp-flow.html" class="">NLP Flow</a>
+</li>
+
+<li>
+<a href="ml-flow.html" class="">ML Flow</a>
+</li>
+
+<li class="header">Common Training</li>
+
+<li>
+<a href="../common/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../common/01-loss.html" class="">01. Loss Function</a>
+</li>
+
+<li>
+<a href="../common/02-gradient.html" class="">02. Gradient & Backpropagation</a>
+</li>
+
+<li>
+<a href="../common/03-learning-rate.html" class="">03. Learning Rate</a>
+</li>
+
+<li>
+<a href="../common/04-optimizer.html" class="">04. Optimizer</a>
+</li>
+
+<li>
+<a href="../common/05-hyperparameter-tuning.html" class="">05. Hyperparameter Tuning</a>
+</li>
+
+<li>
+<a href="../common/06-forward-backward.html" class="">06. Forward / Backward</a>
+</li>
+
+<li class="header">ML</li>
+
+<li>
+<a href="../machine-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../machine-learning/01-learning-types.html" class="">01. 학습 유형</a>
+</li>
+
+<li>
+<a href="../machine-learning/02-regularization.html" class="">02. L1 / L2 정규화</a>
+</li>
+
+<li>
+<a href="../machine-learning/03-pca.html" class="">03. PCA</a>
+</li>
+
+<li>
+<a href="../machine-learning/04-ensemble.html" class="">04. 앙상블</a>
+</li>
+
+<li>
+<a href="../machine-learning/05-metrics.html" class="">05. 평가 지표</a>
+</li>
+
+<li class="header">DL</li>
+
+<li>
+<a href="../deep-learning/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Train</a>
+<ul>
+
+<li>
+<a href="../deep-learning/01-train/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/01-activation.html" class="">01. Activation</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/02-training-tools.html" class="">02. Training Tools</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/03-mlp-fcl-tensor.html" class="">03. MLP / FCL / Tensor / Channel</a>
+</li>
+
+<li>
+<a href="../deep-learning/01-train/04-by-hand.html" class="">04. 손계산 루틴</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Vision</a>
+<ul>
+
+<li>
+<a href="../deep-learning/02-vision/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/01-cnn.html" class="">01. CNN</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/02-classification.html" class="">02. Image Classification</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/03-detection.html" class="">03. Object Detection</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/04-segmentation.html" class="">04. Segmentation</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/05-vit.html" class="">05. ViT</a>
+</li>
+
+<li>
+<a href="../deep-learning/02-vision/06-swin-detr.html" class="">06. Swin Transformer / DETR</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">NLP</a>
+<ul>
+
+<li>
+<a href="../deep-learning/03-nlp/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/01-rnn.html" class="">01. RNN / LSTM / GRU</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/02-transformer-overview.html" class="">02. Transformer Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/03-attention-basic.html" class="">03. Attention 기본</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/04-gpt-bert.html" class="">04. GPT / BERT</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/05-efficient-attention.html" class="">05. 효율적 Attention</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/06-prompting-rlhf-cot.html" class="">06. Prompting / RLHF / CoT</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/07-llama-code-structure.html" class="">07. Llama 코드 구조</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/08-autoencoder-mae.html" class="">08. Autoencoder / MAE</a>
+</li>
+
+<li>
+<a href="../deep-learning/03-nlp/09-moe.html" class="">09. MoE</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Optimization</a>
+<ul>
+
+<li>
+<a href="../deep-learning/04-optimization/index.html" class="">Overview</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/01-quantization.html" class="">01. Quantization</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/02-pruning.html" class="">02. Pruning</a>
+</li>
+
+<li>
+<a href="../deep-learning/04-optimization/03-lora.html" class="">03. LoRA / QLoRA</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="vision-flow">Vision Flow<a class="headerlink" href="#vision-flow" title="Permanent link">&para;</a></h1>
+<p>Vision 면접 흐름은 CNN의 inductive bias에서 시작해 task별 출력 형태로 확장하는 것이 자연스럽습니다.</p>
+<h2 id="_1">전체 흐름<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-text">CNN 기본 구조
+-&gt; Classification
+-&gt; Detection
+-&gt; Segmentation
+-&gt; ViT
+-&gt; Swin / DETR
+</code></pre>
+<h2 id="cnn">CNN에서 시작하기<a class="headerlink" href="#cnn" title="Permanent link">&para;</a></h2>
+<p>CNN은 이미지의 지역 패턴을 잘 잡기 위해 convolution을 사용합니다.</p>
+<ul>
+<li>local connectivity: 가까운 pixel 관계를 봅니다.</li>
+<li>weight sharing: 같은 filter를 이미지 전체에 적용합니다.</li>
+<li>translation equivariance: 물체 위치가 조금 바뀌어도 feature가 함께 이동합니다.</li>
+</ul>
+<h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
+<p>이미지 전체에 하나의 라벨을 붙이는 task입니다.</p>
+<pre><code class="language-text">image -&gt; backbone -&gt; global pooling -&gt; classifier -&gt; class
+</code></pre>
+<p>대표 모델:</p>
+<ul>
+<li>VGG</li>
+<li>ResNet</li>
+<li>EfficientNet</li>
+<li>ViT</li>
+</ul>
+<h2 id="detection">Detection<a class="headerlink" href="#detection" title="Permanent link">&para;</a></h2>
+<p>객체의 class와 위치를 동시에 찾습니다.</p>
+<pre><code class="language-text">image -&gt; backbone -&gt; detection head -&gt; boxes + classes
+</code></pre>
+<p>대표 흐름:</p>
+<ul>
+<li>Faster R-CNN: two-stage detector</li>
+<li>YOLO: one-stage detector</li>
+<li>DETR: Transformer 기반 set prediction</li>
+</ul>
+<h2 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h2>
+<p>pixel 단위로 class 또는 instance를 예측합니다.</p>
+<pre><code class="language-text">image -&gt; encoder -&gt; decoder -&gt; mask
+</code></pre>
+<p>대표 모델:</p>
+<ul>
+<li>U-Net</li>
+<li>DeepLab</li>
+<li>SegFormer</li>
+<li>Mask2Former</li>
+<li>SAM</li>
+</ul>
+<h2 id="vit">ViT로 넘어가는 이유<a class="headerlink" href="#vit" title="Permanent link">&para;</a></h2>
+<p>CNN은 locality bias가 강합니다. 반면 ViT는 이미지를 patch token으로 바꿔 self-attention으로 전역 관계를 학습합니다.</p>
+<pre><code class="language-text">image -&gt; patches -&gt; patch embeddings -&gt; transformer encoder -&gt; head
+</code></pre>
+<h2 id="_2">면접 포인트<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CNN의 convolution, padding, pooling을 그림 없이 설명할 수 있어야 합니다.</li>
+<li>Classification, Detection, Segmentation의 출력 차이를 먼저 말해야 합니다.</li>
+<li>Detection에서는 IoU와 mAP를 연결해야 합니다.</li>
+<li>Segmentation에서는 semantic과 instance 차이를 말할 수 있어야 합니다.</li>
+<li>ViT는 “이미지를 token sequence로 본다”는 관점이 핵심입니다.</li>
+</ul>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../js/main.js"></script>
+<script src="../search/main.js"></script>
+<script src="../js/gitbook.min.js"></script>
+<script src="../js/theme.min.js"></script>
+</body>
+</html>
